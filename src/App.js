@@ -21,7 +21,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter  basename="http://natacha-steiver.github.io/react_backoffice">
+      <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
               <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
