@@ -1,0 +1,20 @@
+
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+
+
+ @media (min-width: 992px) {
+   .label-row{
+       display: inline-block;
+ }
+
+}
+
+@media (max-width: 992px) {
+  .label-row{
+      display: block;
+}
+.group-align{
+  text-align: center;
+}
+}
