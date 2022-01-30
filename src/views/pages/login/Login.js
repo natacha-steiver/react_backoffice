@@ -25,23 +25,19 @@ const Login = () => {
   const [emailNew, setEmail] = useState('');
   const [passwordNew, setPassword] = useState('');
 
-  const history = useHistory();
+ 
 
 
-
-  const routeChange = () =>{
-    history.push('/dashboard');
-
-  }
+ 
 
   const submits = () =>{
 
       dispatch(login(emailNew,passwordNew));
       setTimeout(() => {
 
-     if(JSON.parse(localStorage.getItem("connecté"))===true){
-         routeChange();
-     }
+
+    
+
 
    }, 3000);
 

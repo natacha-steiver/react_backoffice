@@ -41,8 +41,7 @@ const set=(val)=>{
  const createTexts = ({titre,contenu,page }) => {
   return (dispatch) => {
     return axios.post(`http://localhost:8000/api/texts`, {titre,contenu,page},{
-      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
     })
       .then(response => {
 
@@ -75,8 +74,7 @@ const createTextsSuccess =  (data) => {
       //console.log("page id:"+page);
     return (dispatch) => {
       return axios.put(`http://localhost:8000/api/texts/${id}`,{id:id,titre:titre,contenu:contenu,page:page},{
-        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
       })
       .then(response => {
           dispatch(updateTextsSuccess(response.data))
@@ -118,8 +116,7 @@ const createTextsSuccess =  (data) => {
         method: 'delete',
         url: `http://localhost:8000/api/texts/${id}`,
         data:{id:id},
-        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
 }).then(response => {
         dispatch(deleteTextsSuccess(id));
 
@@ -140,8 +137,7 @@ const createTextsSuccess =  (data) => {
   const fetchAllTexts = () => {
   return (dispatch) => {
     return axios.get('http://localhost:8000/api/texts',{
-      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
         })
 
       .then(res => {
@@ -162,8 +158,8 @@ const createTextsSuccess =  (data) => {
   return (dispatch) => {
 
     return axios.post(`http://localhost:8000/api/pages`, {name,photo},{
-      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))
+       }
     })
       .then(response => {
 
@@ -197,8 +193,8 @@ const createTextsSuccess =  (data) => {
 
     return (dispatch) => {
       return axios.put(`http://localhost:8000/api/pages/${id}`,{id:id,photo:photo,name: name},{
-        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))
+       }
       })
       .then(response => {
           dispatch(updatepageSuccess(response.data))
@@ -236,8 +232,8 @@ const createTextsSuccess =  (data) => {
         method: 'delete',
         url: `http://localhost:8000/api/pages/${id}`,
         data:{id:id},
-        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+        headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))
+        }
 }).then(response => {
         dispatch(deletepageSuccess(id))
       })
@@ -257,9 +253,7 @@ const fetchpages = (pages) => {
 const fetchAllpages = () => {
   return (dispatch) => {
     return axios.get('http://localhost:8000/api/pages',{
-      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-              'Content-Type': 'application/x-www-form-urlencoded'}
-        })
+      headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)) }})
       .then(res => {
 
         dispatch(fetchpages(res.data))
@@ -275,8 +269,8 @@ const fetchAllpages = () => {
 const createLangues = ({name,iso,page }) => {
  return (dispatch) => {
    return axios.post(`http://localhost:8000/api/langues`, {name,iso,page:{names:["testa","hh","uu"],photo:["photo1","photo2","photo3"]}},{
-     headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+     headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
+       
    })
      .then(response => {
 
@@ -308,8 +302,7 @@ const createLanguesSuccess =  (data) => {
    const updateLangues = (id,pageID,pageName,photo,name,iso)=>{
    return (dispatch) => {
      return axios.put(`http://localhost:8000/api/langues/${id}`,{id:id,name:name,iso:iso,page:{id:pageID,name:pageName,photo:photo}},{
-       headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+       headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)) }
      })
      .then(response => {
          dispatch(updateLanguesSuccess(response.data))
@@ -348,8 +341,7 @@ const updateLanguesSuccess =  (data) => {
        method: 'delete',
        url: `http://localhost:8000/api/langues/${id}`,
        data:{id:id},
-       headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+       headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))}
 }).then(response => {
        dispatch(deleteLanguesSuccess(id));
 
@@ -370,8 +362,7 @@ const updateLanguesSuccess =  (data) => {
  const fetchAllLangues = () => {
  return (dispatch) => {
    return axios.get('http://localhost:8000/api/langues',{
-     headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-        'Content-Type': 'application/x-www-form-urlencoded'}
+     headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)) }
        })
 
      .then(res => {

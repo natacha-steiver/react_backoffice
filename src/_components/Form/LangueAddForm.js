@@ -68,8 +68,8 @@ const LangueAddForm = () => {
           formdata.append('page',JSON.stringify({names:nameNew}));
           console.log(formdata.getAll("photos"));
 
-          const res= await fetch("http://localhost:8000/api/langues",{method:'POST',headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-                  'Content-Type': 'application/x-www-form-urlencoded'},body:formdata}).then(response=>
+          const res= await fetch("http://localhost:8000/api/langues",{method:'POST',headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))},body:formdata})
+          .then(response=>
             {
               response.json().then(json => {
               //  console.log(json[json.length-1]);
@@ -142,7 +142,7 @@ const LangueAddForm = () => {
 
                                         </div>
                                         <div>
-                                        <p>Vos pages:</p>
+                                        <p>Vos pages:(appuyer sur la touche entrée du clavier après avoir écrit le nom de la page)</p>
                                         {Array.from(nameNew).map((el,i)=>{
                                           return (
                                             <div key={i+"conso"}>

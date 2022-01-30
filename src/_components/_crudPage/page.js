@@ -32,6 +32,9 @@ export const Page=({ page: { name,photo, id },pages, dispatch }) => {
   const [imgNew, setimg] = useState(photo);
   const { register, handleSubmit } = useForm();
 
+  
+ 
+
   const onSubmit = async(data) => {
     let formdatas = new FormData()
     formdatas.append('photo', data["image"][0]);
@@ -39,7 +42,7 @@ export const Page=({ page: { name,photo, id },pages, dispatch }) => {
     formdatas.append('id',id );
     if(updateNew==true){
       const res= await fetch(`http://localhost:8000/api/pages`,{method:'POST',headers: {
-               Accept: 'application/json',
+               Accept: 'application/json',  'Authorization': "Bearer ".concat(JSON.parse(document.cookie))
              },body:formdatas}).then(response=>
         {
           response.json().then(json => {

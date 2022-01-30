@@ -6,6 +6,7 @@ import axios from "axios";
 import { history } from '../_helpers/history';
 
 export const login = (email,password) => {
+
   return (dispatch) => {
     //console.log("test axios:"+email+password);
     return axios.post(`api/login`, {email:email,password:password},{
@@ -26,6 +27,8 @@ export const login = (email,password) => {
             localStorage.setItem("connecté",JSON.stringify(bool));
             document.cookie =JSON.stringify(response.data.access_token);
             axios.defaults.headers.common['X-CSRF-TOKEN'] = response.data.access_token;
+            history.replace('/dashboard');
+
           }
 
 

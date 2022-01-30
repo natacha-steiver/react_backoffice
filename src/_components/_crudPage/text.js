@@ -77,7 +77,9 @@ export const Text=({ text: { titre,contenu, page,id },pages, dispatch }) => {
 
 
       <button className="btn btn-success" type="button" onClick={() =>
-    {    dispatch(updateTexts(id,pageNew,titreNew,contenuNew))
+    {    
+     // alert(JSON.stringify(id))
+      dispatch(updateTexts(id,pageNew,titreNew,contenuNew))
       //issue update stop fetch data so add this below
 
     }

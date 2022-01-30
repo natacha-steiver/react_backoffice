@@ -85,7 +85,7 @@ export const Langue=({ langue: { langue_name,langue_iso,langue_id},pages, dispat
 
 
       const res= await fetch(`http://localhost:8000/api/langues`,{method:'POST',headers: {
-               Accept: 'application/json',
+               Accept: 'application/json', 'Authorization': "Bearer ".concat(JSON.parse(document.cookie))
              },body:formdatas}).then(response=>
         {
           response.json().then(json => {

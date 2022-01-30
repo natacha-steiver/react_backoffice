@@ -38,8 +38,7 @@ const ConsoAddForm = () => {
           let formdata = new FormData()
           formdata.append('photo', data["image"][0]);
           formdata.append('name',nameNew );
-           const res= await fetch("http://localhost:8000/api/pages",{method:'POST',headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie)),
-                   'Content-Type': 'application/x-www-form-urlencoded'},body:formdata}).then(response=>
+           const res= await fetch("http://localhost:8000/api/pages",{method:'POST',headers:{'Authorization': "Bearer ".concat(JSON.parse(document.cookie))},body:formdata}).then(response=>
              {
                response.json().then(json => {
                  //console.log(json);

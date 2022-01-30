@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import {Text} from "../_crudPage/text";
 import { createTexts,fetchAllpages,fetchAllTexts,updateTexts,deleteTexts} from '../../_actions/crudActions';
-import {PageLoop} from "../_crudPage/text_page_loop";
 
 const TextAddForm = () => {
     const dispatch = useDispatch();
